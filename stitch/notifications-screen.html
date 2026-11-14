@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LocalConnect - Notifications</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#2e4f11",
+            "secondary-fixed-dim": "#c0c8c2",
+            "on-surface-variant": "#404944",
+            "surface-container-highest": "#dce5d9",
+            "on-secondary-container": "#5c645f",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#1a503d",
+            "surface-container-high": "#e2ebde",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#161d19",
+            "tertiary-fixed-dim": "#aad385",
+            "primary-fixed": "#b7eed5",
+            "secondary": "#58605b",
+            "primary-fixed-dim": "#9cd2ba",
+            "on-tertiary-fixed": "#0d2000",
+            "inverse-surface": "#2a322a",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#9cd2ba",
+            "surface-bright": "#f3fcef",
+            "on-primary-fixed": "#002116",
+            "error-container": "#ffdad6",
+            "secondary-container": "#dae2db",
+            "surface-tint": "#346854",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#e8f0e4",
+            "surface-variant": "#dce5d9",
+            "surface-container-low": "#edf6e9",
+            "error": "#ba1a1a",
+            "on-background": "#161d16",
+            "tertiary-container": "#2c4d0f",
+            "surface": "#f3fcef",
+            "on-tertiary-container": "#96be73",
+            "primary-container": "#174d3b",
+            "inverse-on-surface": "#eaf3e7",
+            "secondary-fixed": "#dce4de",
+            "on-secondary-fixed-variant": "#414944",
+            "on-primary-container": "#87bda6",
+            "tertiary": "#193500",
+            "on-error": "#ffffff",
+            "background": "#f3fcef",
+            "outline": "#707974",
+            "on-surface": "#161d16",
+            "surface-dim": "#d4ddd0",
+            "outline-variant": "#c0c9c2",
+            "tertiary-fixed": "#c5ef9f",
+            "primary": "#003526"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-sm": "0.75rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin-desktop": "2rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "margin-tablet": "1.5rem",
+            "space-md": "1rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "display-lg-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+    }
+    body {
+      -webkit-tap-highlight-color: transparent;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased flex justify-center min-h-screen">
+<!-- Mobile Shell (Device Canvas) -->
+<div class="w-full max-w-[480px] bg-background min-h-screen flex flex-col relative shadow-xl overflow-x-hidden pb-24">
+<!-- Top System / App Bar -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-margin pt-3 pb-2 flex flex-col shadow-sm">
+<!-- Android Status Bar Placeholder Alignment -->
+<div class="flex items-center justify-between py-1 text-on-surface-variant">
+<div class="flex items-center space-x-1.5">
+<span class="font-label-sm text-label-sm font-semibold tracking-tight text-on-surface">9:41</span>
+</div>
+<div class="flex items-center space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-[16px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[16px]">wifi</span>
+<span class="material-symbols-outlined text-[16px]">battery_full</span>
+</div>
+</div>
+<!-- Main Action App Bar -->
+<div class="flex items-center justify-between pt-2 pb-1">
+<div class="flex items-center space-x-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold tracking-tight">Notifications</h1>
+<span class="inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold">
+            3 new
+          </span>
+</div>
+<div class="flex items-center space-x-1">
+<button class="flex items-center space-x-1 px-3 py-1.5 rounded-full hover:bg-surface-container transition-colors duration-150 active:scale-95 text-primary text-label-md font-label-md" id="markReadBtn" title="Mark all as read">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+<span class="hidden sm:inline">Mark read</span>
+</button>
+<button aria-label="Notification Settings" class="p-2 rounded-full hover:bg-surface-container transition-colors duration-150 active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Filter Tabs Strip -->
+<div class="flex items-center space-x-2 pt-2 pb-1 overflow-x-auto no-scrollbar">
+<!-- Active Tab: All -->
+<button class="flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm active:scale-95 transition-transform duration-100 whitespace-nowrap">
+<span>All</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+</button>
+<!-- Tab: Mentions & Replies -->
+<button class="flex items-center space-x-1 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/60 text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors duration-150 active:scale-95 whitespace-nowrap">
+<span>Mentions &amp; Replies</span>
+</button>
+<!-- Tab: Alerts -->
+<button class="flex items-center space-x-1 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/60 text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors duration-150 active:scale-95 whitespace-nowrap">
+<span>Alerts</span>
+<span class="w-2 h-2 rounded-full bg-error"></span>
+</button>
+</div>
+</header>
+<!-- Notification Feed Stream -->
+<main class="flex-1 px-margin pt-3 flex flex-col space-y-2.5">
+<!-- Today Header Subtitle -->
+<div class="flex items-center justify-between pt-1 pb-0.5">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Today</span>
+<span class="font-label-sm text-label-sm text-outline">Local radius: 1.5 mi</span>
+</div>
+<!-- ITEM 1: Unread Alert (Emergency/Urgent Notice) -->
+<article class="relative flex items-start p-3.5 rounded-2xl bg-surface-container-low border border-outline-variant/50 hover:bg-surface-container transition-colors duration-150 active:scale-[0.99]">
+<!-- Indicator Dot for Unread -->
+<div class="absolute top-4 right-3.5 flex items-center space-x-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</div>
+<!-- Avatar / Icon badge -->
+<div class="relative shrink-0 mr-3">
+<div class="w-11 h-11 rounded-full bg-error-container text-error flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-error text-on-error flex items-center justify-center text-[10px] ring-2 ring-surface-container-low">
+<span class="material-symbols-outlined text-[12px]">priority_high</span>
+</span>
+</div>
+<!-- Notification Details -->
+<div class="flex-1 pr-4">
+<div class="flex items-center space-x-1.5 mb-1">
+<span class="px-2 py-0.5 rounded-md bg-error text-on-error font-label-sm text-[10px] font-bold uppercase tracking-wider">Urgent Alert</span>
+<span class="font-label-sm text-label-sm text-secondary">Municipal Services</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-snug">
+            Water main inspection schedule adjusted for Maple Ave tomorrow.
+          </p>
+<div class="flex items-center space-x-3 mt-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center text-primary font-medium">
+<span class="material-symbols-outlined text-[14px] mr-1">schedule</span> 10m ago
+            </span>
+<span class="text-outline">•</span>
+<span class="hover:underline cursor-pointer text-primary">View street notice</span>
+</div>
+</div>
+</article>
+<!-- ITEM 2: Unread Like with Thumbnail (Social Hyperlocal) -->
+<article class="relative flex items-start p-3.5 rounded-2xl bg-surface-container-low border border-outline-variant/50 hover:bg-surface-container transition-colors duration-150 active:scale-[0.99]">
+<!-- Indicator Dot for Unread -->
+<div class="absolute top-4 right-3.5 flex items-center space-x-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<!-- Avatar / Stacked Icons -->
+<div class="relative shrink-0 mr-3">
+<img class="w-11 h-11 rounded-full object-cover ring-2 ring-surface-container-lowest" data-alt="A portrait photograph of a friendly smiling female neighbor with light brown braided hair wearing a sage green gardening apron outdoors under soft golden natural daylight in a lush community garden." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcDs34UPi2YEeoYI6o-CXcXcWUTp-ehZsytsT0baYIX3PSRIckA91y79WZpBa9hRIx_WBEk2HQ1ECkoWz8yR0QYYBG-qYlQW-QFtXmlqDs1OdZ3po7cNGz3zwOd5MlIKFEMEvsOEbZr6dJz4DVDw6Pmc4cGZdBO4RLC1dDpwL6RHiD2Gl4ow5aAPrs940jy50cTmsclG0YVnq7S-c2aJFv4xTzq1miejFRk_G_no0"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-rose-600 text-white flex items-center justify-center text-[11px] ring-2 ring-surface-container-low">
+<span class="material-symbols-outlined text-[12px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</span>
+</div>
+<!-- Notification Details -->
+<div class="flex-1 pr-2">
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+<strong class="font-semibold text-primary">Elena Rostova</strong> and <span class="font-semibold">8 other neighbors</span> liked your post about <span class="text-on-surface-variant">"Weekend volunteer garden restoration"</span>.
+          </p>
+<!-- Post preview snippet & thumbnail -->
+<div class="mt-2.5 flex items-center space-x-2.5 p-2 rounded-xl bg-surface-container-lowest border border-outline-variant/40">
+<img class="w-10 h-10 rounded-lg object-cover shrink-0" data-alt="A sunlit urban neighborhood community garden featuring raised wooden garden planter beds, green sprouts, organic soil, and ceramic flowerpots bathed in morning warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpiI88WQrWGgmaAjuvfz1CaWp2UZpol5-U0353usQLxSo5_AL0L0qyWrDeOZttuHEePktYx1TxkEhLeeMvMxSn4WZ4w5p6U17tTkdlYCX22I52Py2kNLxRsq83azSbr2CB1hhLtdgnuVGBQxHL88FzEmvAuESS0Ctt2QslvY8NnMAFot9AFt4nejYIp8mQcBdWg0HSb23OfTDNmt_e8onAXB9FYEIOh8rpGuJUc1Y"/>
+<p class="font-body-sm text-body-sm text-secondary truncate flex-1">
+              "We received 12 heirloom tomato starts for the North Plot! Volunteers meet at 9am..."
+            </p>
+</div>
+<div class="flex items-center space-x-3 mt-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center text-primary font-medium">
+<span class="material-symbols-outlined text-[14px] mr-1">schedule</span> 25m ago
+            </span>
+<span class="text-outline">•</span>
+<span class="hover:underline cursor-pointer text-primary">View reactions</span>
+</div>
+</div>
+</article>
+<!-- ITEM 3: Unread Comment -->
+<article class="relative flex items-start p-3.5 rounded-2xl bg-surface-container-low border border-outline-variant/50 hover:bg-surface-container transition-colors duration-150 active:scale-[0.99]">
+<!-- Indicator Dot for Unread -->
+<div class="absolute top-4 right-3.5 flex items-center space-x-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<!-- Avatar / Icon badge -->
+<div class="relative shrink-0 mr-3">
+<img class="w-11 h-11 rounded-full object-cover ring-2 ring-surface-container-lowest" data-alt="A cheerful portrait photo of a middle-aged male neighbor with glasses and a warm smile, wearing a warm charcoal fleece pullover against a soft-focus residential porch background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZoBaocFjhC0F3VgTTsAONSUUY9rijHIuSe93KYQnINHRfEZk6JtAg5Nor5fsmcmVGlNhV-y7-jXRONJkgzkCQPMlPWhIYNk6iBZ_B1nAdjc6pd8Bh36XTXwyjezAklOg-rDrr0J9Db22NWLd9XSTzVs8rOyjbvecOFRuiZlAOfNcdyckpkxjWAuko0uG9L7_edsnCyA4v8nooEcdi1w75O-2NegRF0E5a9PGfyuE"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center ring-2 ring-surface-container-low">
+<span class="material-symbols-outlined text-[12px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+</span>
+</div>
+<!-- Notification Details -->
+<div class="flex-1 pr-3">
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+<strong class="font-semibold text-primary">Marcus Vance</strong> commented on your update:
+          </p>
+<div class="mt-1.5 pl-2.5 border-l-2 border-primary/40 font-body-md text-body-md italic text-on-surface-variant">
+            “I'll bring 4 extra potting trowels!”
+          </div>
+<div class="flex items-center space-x-3 mt-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center text-primary font-medium">
+<span class="material-symbols-outlined text-[14px] mr-1">schedule</span> 1h ago
+            </span>
+<span class="text-outline">•</span>
+<button class="font-semibold text-primary hover:underline">Reply directly</button>
+</div>
+</div>
+</article>
+<!-- Yesterday Header Subtitle -->
+<div class="flex items-center justify-between pt-3 pb-0.5">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Earlier</span>
+</div>
+<!-- ITEM 4: Read Notification (Follower Update) -->
+<article class="relative flex items-start p-3.5 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low transition-colors duration-150">
+<!-- Avatar / User Icon badge -->
+<div class="relative shrink-0 mr-3">
+<img class="w-11 h-11 rounded-full object-cover" data-alt="A friendly natural portrait of an East Asian young man wearing an olive linen casual shirt smiling softly, with soft daylight and green trees visible in the blurred background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3-Uqx9mWv2Cm0Xmhkr0TtjNNn8x2iQdAOufZG0XRHuiRN_yM6BRtDgBFUS4K6b-wKbgtwKrngbhh55qw_GPb71h3QSM8Jg94XW43VwwfmLBrxg2wDM9arEoCdPNkI0sWUGdpga6DR2D48SPeDmYQ42tgSLCODKf6lzMaL9O8NKJu6BhbIkncZ4s0EVaIKXKv9S6yJfm-WE_xk7CgBGHaKkfYVAbtMGWUI64u9xbI"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center ring-2 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-[12px]">person_add</span>
+</span>
+</div>
+<!-- Details -->
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+<strong class="font-semibold text-on-surface">David Kim</strong> started following updates in <span class="font-semibold text-primary">Oakridge Commons</span>.
+          </p>
+<div class="flex items-center space-x-3 mt-1.5 text-secondary font-label-sm text-label-sm">
+<span class="flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1">schedule</span> 3h ago
+            </span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant font-medium">Birchwood District</span>
+</div>
+</div>
+<!-- Follow back chip -->
+<button class="shrink-0 self-center ml-2 px-3 py-1 rounded-full border border-outline-variant/80 text-primary font-label-sm text-label-sm hover:bg-secondary-container/50 transition-colors">
+          View
+        </button>
+</article>
+<!-- ITEM 5: Read Notification (Event Calendar Reminder) -->
+<article class="relative flex items-start p-3.5 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low transition-colors duration-150">
+<!-- Avatar / Calendar Icon badge -->
+<div class="relative shrink-0 mr-3">
+<div class="w-11 h-11 rounded-full bg-secondary-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">calendar_today</span>
+</div>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center ring-2 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-[11px]">notifications</span>
+</span>
+</div>
+<!-- Details -->
+<div class="flex-1">
+<div class="flex items-center space-x-1.5 mb-0.5">
+<span class="px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-fixed font-label-sm text-[10px] font-semibold">Community Event</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+            Reminder: <strong class="font-semibold">Oakridge Monthly Book Swap</strong> begins tomorrow at 10:30 AM at the Community Pavilion.
+          </p>
+<div class="flex items-center space-x-3 mt-1.5 text-secondary font-label-sm text-label-sm">
+<span class="flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1">history</span> Yesterday
+            </span>
+<span class="text-outline-variant">•</span>
+<span class="text-primary font-medium hover:underline cursor-pointer">Add to Google Calendar</span>
+</div>
+</div>
+</article>
+<!-- Bottom Spacer info -->
+<div class="pt-4 pb-2 text-center">
+<p class="font-label-sm text-label-sm text-outline">You are all caught up on neighborhood alerts</p>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Injected from Shared Components JSON with Alerts tab semantic active state) -->
+<!-- Destination labels: ["Home", "Discover", "Create", "Alerts", "Profile"] -->
+<!-- Active Tab: "Alerts" represents notifications -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-sm py-space-xs bg-surface dark:bg-inverse-surface border-t border-outline-variant/40 shadow-[0px_-4px_16px_rgba(20,30,20,0.06)]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant py-1 px-3 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="font-label-sm text-label-sm mt-0.5">Home</span>
+</a>
+<!-- Discover -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant py-1 px-3 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[24px]">explore</span>
+<span class="font-label-sm text-label-sm mt-0.5">Discover</span>
+</a>
+<!-- Create -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant py-1 px-3 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[28px] text-primary">add_circle</span>
+<span class="font-label-sm text-label-sm mt-0.5">Create</span>
+</a>
+<!-- Alerts (ACTIVE DESTINATION) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary font-semibold py-1 px-3 bg-secondary-container/60 dark:bg-primary-container rounded-full active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[24px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="font-label-sm text-label-sm mt-0.5">Alerts</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant py-1 px-3 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="font-label-sm text-label-sm mt-0.5">Profile</span>
+</a>
+</nav>
+</div>
+<!-- Inline Script for Interactive feedback -->
+<script>
+    document.getElementById('markReadBtn')?.addEventListener('click', function() {
+      const unreadDots = document.querySelectorAll('.animate-pulse, .bg-primary.w-2.h-2');
+      unreadDots.forEach(dot => {
+        dot.classList.add('opacity-0');
+        setTimeout(() => dot.remove(), 250);
+      });
+      const badge = document.querySelector('header span.bg-primary-container');
+      if (badge) {
+        badge.textContent = 'All read';
+        badge.classList.remove('bg-primary-container', 'text-on-primary');
+        badge.classList.add('bg-secondary-container', 'text-on-secondary-fixed');
+      }
+    });
+  </script>
+</body></html>

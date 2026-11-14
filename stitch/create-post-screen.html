@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>New Community Post - LocalConnect</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#2e4f11",
+            "secondary-fixed-dim": "#c0c8c2",
+            "on-surface-variant": "#404944",
+            "surface-container-highest": "#dce5d9",
+            "on-secondary-container": "#5c645f",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#1a503d",
+            "surface-container-high": "#e2ebde",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#161d19",
+            "tertiary-fixed-dim": "#aad385",
+            "primary-fixed": "#b7eed5",
+            "secondary": "#58605b",
+            "primary-fixed-dim": "#9cd2ba",
+            "on-tertiary-fixed": "#0d2000",
+            "inverse-surface": "#2a322a",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#9cd2ba",
+            "surface-bright": "#f3fcef",
+            "on-primary-fixed": "#002116",
+            "error-container": "#ffdad6",
+            "secondary-container": "#dae2db",
+            "surface-tint": "#346854",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#e8f0e4",
+            "surface-variant": "#dce5d9",
+            "surface-container-low": "#edf6e9",
+            "error": "#ba1a1a",
+            "on-background": "#161d16",
+            "tertiary-container": "#2c4d0f",
+            "surface": "#f3fcef",
+            "on-tertiary-container": "#96be73",
+            "primary-container": "#174d3b",
+            "inverse-on-surface": "#eaf3e7",
+            "secondary-fixed": "#dce4de",
+            "on-secondary-fixed-variant": "#414944",
+            "on-primary-container": "#87bda6",
+            "tertiary": "#193500",
+            "on-error": "#ffffff",
+            "background": "#f3fcef",
+            "outline": "#707974",
+            "on-surface": "#161d16",
+            "surface-dim": "#d4ddd0",
+            "outline-variant": "#c0c9c2",
+            "tertiary-fixed": "#c5ef9f",
+            "primary": "#003526"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-sm": "0.75rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin-desktop": "2rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "margin-tablet": "1.5rem",
+            "space-md": "1rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex justify-center selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Android Device Shell / Canvas Viewport -->
+<main class="w-full max-w-md bg-surface-container-lowest min-h-screen flex flex-col shadow-2xl relative overflow-x-hidden border-x border-outline-variant/30">
+<!-- Android Status Bar Simulation -->
+<div class="w-full h-7 px-margin flex items-center justify-between text-on-surface-variant bg-surface-container-lowest select-none pt-1">
+<span class="font-label-md text-label-md font-semibold tracking-tight text-on-surface">9:41</span>
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[16px]">wifi</span>
+<span class="material-symbols-outlined text-[18px]">battery_full</span>
+</div>
+</div>
+<!-- Top App Bar (Focused Modal / Creation Journey - BottomNav suppressed per Destination Rule) -->
+<header class="flex justify-between items-center w-full px-margin h-14 bg-surface-container-lowest sticky top-0 z-40 shadow-sm">
+<button aria-label="Cancel post creation" class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-1.5 px-1 active:scale-95 duration-100 flex items-center gap-1" type="button">
+<span>Cancel</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">
+        New Community Post
+      </h1>
+<button class="bg-primary-container text-on-primary font-label-lg text-label-lg rounded-full px-5 py-2 hover:bg-primary transition-all shadow-sm active:scale-95 duration-100 font-semibold tracking-normal" type="button">
+        Publish
+      </button>
+</header>
+<!-- Scrollable Creation Form Body -->
+<div class="flex-1 overflow-y-auto px-margin pt-space-md pb-24 space-y-space-md">
+<!-- Author Identity & Neighborhood Audience Selector -->
+<section class="flex items-center justify-between gap-space-md p-space-sm bg-surface-container-low rounded-xl border border-outline-variant/40">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-11 h-11 rounded-full object-cover ring-2 ring-primary-container/20" data-alt="Close-up portrait of Maya Lindqvist, a friendly Scandinavian woman with warm eyes, gentle smile, natural blonde hair, wearing a forest green knit sweater, soft natural outdoor morning lighting in a quiet residential neighborhood, shallow depth of field, high aesthetic resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClyV6jNJkCs5zo4t4jJ9KRTRa5iTTqw0VeBmYJYvHA4lALcEluKroSK11_BNoF5FUPayaHE29s15mgt-Olum00k5_qDNoxlWLo0aBFhrzJs_EAqkFqVRI2K4ovb2BOAbqZzxSyYRI46Ml_TcVsqxLGBlX0g7arGbPnga7P0zG8sISYzplRJ9z7ceZcHiJ-02onUdNidhzRaSYEdHLBnyF-7N4Pg9brBq0k_GJNhZg"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-tertiary-fixed-dim rounded-full ring-2 ring-surface-container-lowest" title="Verified Resident"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold leading-tight">Maya Lindqvist</span>
+<span class="material-symbols-outlined text-[16px] text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Block Representative</span>
+</div>
+</div>
+<!-- Audience Picker Chip -->
+<button class="flex items-center gap-1.5 bg-surface-container-lowest border border-outline-variant/60 rounded-full px-3 py-1.5 shadow-sm hover:border-primary-container transition-colors active:scale-95 duration-100" type="button">
+<span class="material-symbols-outlined text-[15px] text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate max-w-[125px]">Oakridge Commons</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">arrow_drop_down</span>
+</button>
+</section>
+<!-- Category Pill Selector -->
+<section class="space-y-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">label</span>
+          Select category
+        </label>
+<div class="flex items-center gap-2 overflow-x-auto pb-1.5 pt-0.5 no-scrollbar scroll-smooth">
+<!-- Active Pill -->
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold shadow-sm transition-transform active:scale-95 duration-100 flex items-center gap-1.5" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+            General Update
+          </button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/80 text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all active:scale-95 duration-100" type="button">
+            Safety Alert
+          </button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/80 text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all active:scale-95 duration-100" type="button">
+            Local Event
+          </button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/80 text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all active:scale-95 duration-100" type="button">
+            Recommendation
+          </button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/80 text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all active:scale-95 duration-100" type="button">
+            Item for Sale
+          </button>
+</div>
+</section>
+<!-- Main Text Area with live counter -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-space-md space-y-space-sm shadow-[0px_2px_4px_rgba(23,77,59,0.03)] focus-within:border-primary-container transition-colors">
+<textarea class="w-full resize-none border-0 p-0 text-on-surface placeholder:text-on-surface-variant/60 font-body-lg text-body-lg focus:ring-0 leading-relaxed bg-transparent" id="post-content" maxlength="500" placeholder="What's happening in your neighborhood?" rows="4">Our weekend volunteer garden restoration at Maple St Park is officially confirmed for this Saturday at 9:00 AM! Please bring gloves and spare hand trowels if you have them.</textarea>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/30 text-on-surface-variant font-label-sm text-label-sm">
+<span class="inline-flex items-center gap-1 text-primary font-medium">
+<span class="material-symbols-outlined text-[15px]">public</span>
+            Visible to neighbors within 1.2 miles
+          </span>
+<span class="font-medium text-on-surface-variant">
+<span class="text-primary font-semibold">142</span> / 500
+          </span>
+</div>
+</section>
+<!-- Media Attachment Container (Bento / Grid structure) -->
+<section class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Attachments</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">1 / 4 photos</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Thumbnail preview of attached image -->
+<div class="relative group rounded-xl overflow-hidden aspect-[4/3] border border-outline-variant/50 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A lush community garden park in Oakridge with wooden raised planting beds, fresh green seedlings, blossoming wildflower borders, and early morning sunbeams illuminating rich moist soil, clean serene botanical aesthetic, peaceful civic vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARY9CMuLE-rDURRLzrs5jqxB4ADXpDwWcs2ZzmQXUls9XgdTBtx4qXAdTCdie7OOKafYoUa85EaXjtXO2aVBp7dCGc5W5IeM1Wyoyw8uQjWp52PU0BCxq42e6hV85W9s9hlgdyLyD8z1JVxVlQ8Bj2lEYvhD0OpXrhIDNVJDbiNts7nKmTwrltkyEshTTjoObvzORRf6dEJyaie6ZxEfvJb5vlaVlY-WcknkzHP8c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+<!-- Remove thumbnail action -->
+<button aria-label="Remove photo" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-inverse-surface/80 text-on-primary flex items-center justify-center backdrop-blur-sm shadow hover:bg-error transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+<!-- Attachment badge -->
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-[10px] font-semibold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px] text-primary">photo</span>
+              Photo 1
+            </span>
+</div>
+<!-- Dotted Upload Card -->
+<button class="aspect-[4/3] rounded-xl border-2 border-dashed border-outline-variant hover:border-primary-container bg-surface-container-low/50 hover:bg-surface-container transition-all flex flex-col items-center justify-center p-3 text-center group active:scale-[0.98]" type="button">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest group-hover:bg-primary-container/10 flex items-center justify-center text-primary mb-1.5 transition-colors">
+<span class="material-symbols-outlined text-[22px]">add_photo_alternate</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Add Photos or Video</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant mt-0.5">JPEG, PNG, MP4 up to 50MB</span>
+</button>
+</div>
+</section>
+<!-- Interactive Add-ons List / Contextual Modules -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 divide-y divide-outline-variant/30 shadow-[0px_2px_4px_rgba(23,77,59,0.03)] overflow-hidden">
+<!-- Add Location / Street -->
+<div class="flex items-center justify-between p-space-md hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">pin_drop</span>
+</div>
+<div>
+<span class="block font-label-lg text-label-lg text-on-surface">Add Location / Street</span>
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container/60 text-primary font-label-sm text-label-sm mt-0.5 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+                Maple St Community Park
+              </div>
+</div>
+</div>
+<button aria-label="Edit location" class="text-on-surface-variant hover:text-primary p-1" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<!-- Mark as Urgent Alert Toggle Switch -->
+<div class="flex items-center justify-between p-space-md hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-center gap-3 pr-2">
+<div class="w-9 h-9 rounded-full bg-error-container/60 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">crisis_alert</span>
+</div>
+<div>
+<span class="block font-label-lg text-label-lg text-on-surface">Mark as Urgent Alert</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Sends high-priority notification to nearby residents</span>
+</div>
+</div>
+<!-- Styled Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-secondary-container peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Poll / Questionnaire Button -->
+<button class="w-full flex items-center justify-between p-space-md hover:bg-surface-container-low/40 transition-colors text-left active:bg-surface-container" type="button">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">how_to_vote</span>
+</div>
+<div>
+<span class="block font-label-lg text-label-lg text-on-surface">Poll / Questionnaire</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Ask neighbors for consensus or preferences</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+</button>
+</section>
+<!-- Neighborhood Notice Advisory Banner -->
+<aside class="p-space-md rounded-xl bg-surface-container border border-tertiary-fixed-dim/40 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5" data-weight="fill" style="font-variation-settings: 'FILL' 1;">shield</span>
+<div>
+<span class="font-label-md text-label-md text-primary font-semibold block">Oakridge Community Guidelines</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Keep discussions constructive and respectful. Commercial advertising belongs exclusively under the Marketplace category.</p>
+</div>
+</aside>
+</div>
+<!-- Bottom Toolbar (Fixed Contextual Action Strip) -->
+<div class="fixed bottom-0 max-w-md w-full z-30 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0px_-4px_16px_rgba(20,30,20,0.06)] px-margin py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-1">
+<button aria-label="Attach Photo" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">image</span>
+</button>
+<button aria-label="Pin Location" class="w-10 h-10 rounded-full flex items-center justify-center text-primary bg-secondary-container/60 hover:bg-secondary-container transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</button>
+<button aria-label="Tag Neighbor" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">person_add</span>
+</button>
+<button aria-label="Insert Emoji" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">sentiment_satisfied</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Draft auto-saved</span>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+</div>
+</div>
+</main>
+<script>
+    // Live character count logic for expanding textarea
+    const textarea = document.getElementById('post-content');
+    const charCounter = document.querySelector('span.text-primary.font-semibold');
+    
+    if (textarea && charCounter) {
+      textarea.addEventListener('input', () => {
+        charCounter.textContent = textarea.value.length;
+      });
+    }
+  </script>
+</body></html>

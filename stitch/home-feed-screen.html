@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LocalConnect - Oakridge Commons</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#2e4f11",
+            "secondary-fixed-dim": "#c0c8c2",
+            "on-surface-variant": "#404944",
+            "surface-container-highest": "#dce5d9",
+            "on-secondary-container": "#5c645f",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#1a503d",
+            "surface-container-high": "#e2ebde",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#161d19",
+            "tertiary-fixed-dim": "#aad385",
+            "primary-fixed": "#b7eed5",
+            "secondary": "#58605b",
+            "primary-fixed-dim": "#9cd2ba",
+            "on-tertiary-fixed": "#0d2000",
+            "inverse-surface": "#2a322a",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#9cd2ba",
+            "surface-bright": "#f3fcef",
+            "on-primary-fixed": "#002116",
+            "error-container": "#ffdad6",
+            "secondary-container": "#dae2db",
+            "surface-tint": "#346854",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#e8f0e4",
+            "surface-variant": "#dce5d9",
+            "surface-container-low": "#edf6e9",
+            "error": "#ba1a1a",
+            "on-background": "#161d16",
+            "tertiary-container": "#2c4d0f",
+            "surface": "#f3fcef",
+            "on-tertiary-container": "#96be73",
+            "primary-container": "#174d3b",
+            "inverse-on-surface": "#eaf3e7",
+            "secondary-fixed": "#dce4de",
+            "on-secondary-fixed-variant": "#414944",
+            "on-primary-container": "#87bda6",
+            "tertiary": "#193500",
+            "on-error": "#ffffff",
+            "background": "#f3fcef",
+            "outline": "#707974",
+            "on-surface": "#161d16",
+            "surface-dim": "#d4ddd0",
+            "outline-variant": "#c0c9c2",
+            "tertiary-fixed": "#c5ef9f",
+            "primary": "#003526"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-sm": "0.75rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin-desktop": "2rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "margin-tablet": "1.5rem",
+            "space-md": "1rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Hide scrollbar for clean chip strip */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed pb-24 md:pb-8">
+<!-- Mobile Top Bar Container (matches JSON TopAppBar anchor & responsive rules) -->
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-md transition-shadow duration-200">
+<!-- JSON TopAppBar Implementation -->
+<div class="flex justify-between items-center w-full px-margin h-14 bg-surface shadow-sm">
+<div class="flex items-center gap-2">
+<button aria-label="Change Location" class="flex items-center justify-center p-1 rounded-full text-primary hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="location_on">location_on</span>
+</button>
+<button class="flex items-center gap-1 group text-left">
+<span class="text-headline-sm font-headline-sm text-primary font-bold">Oakridge Commons</span>
+<span class="material-symbols-outlined text-on-surface-variant text-base group-hover:translate-y-0.5 transition-transform" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Search" class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+</button>
+<div class="relative w-8 h-8 rounded-full overflow-hidden border border-outline-variant/50">
+<img class="w-full h-full object-cover" data-alt="A candid profile portrait of Maya, an energetic young resident with warm natural morning lighting in a sunlit leafy terrace. Styled in soft botanical earth tones with gentle contrast and modern clean composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPTpJ1TZKZYj6docJf0Gsokpt1jXzUv6xsNJInYENqiqNNzZPGWrPhML5gevGucz56c0gL-Wv_mu1Yrpuw7NvpBWTHwIoHAGv5d1OCpwsZF0C89azNnPEtk0V6zOhHR6t1DMFLl-eFfHh9hvF9c8kVjHxxneVYjBXtN-Rca6jRekVGjLxUzKRPH4V_JpM_VmM9ZVC1YnbGLHcQPVSo2YKgvaRQXXVZxsMXV4g_T5A"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="max-w-[640px] mx-auto px-margin pt-space-sm space-y-space-md">
+<!-- Greeting & Quick Stats Banner -->
+<div class="flex items-center justify-between pt-1">
+<div>
+<h1 class="text-headline-md font-headline-md text-on-surface tracking-tight">Good morning, Maya 👋</h1>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">3 neighborhood happenings today</p>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-low rounded-full border border-outline-variant/40 text-label-md font-label-md text-primary">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+        Community Active
+      </span>
+</div>
+<!-- Quick Search Pill Input -->
+<div class="relative flex items-center">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="search">search</span>
+</div>
+<input class="w-full pl-10 pr-12 py-3 bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-full border border-outline-variant/50 focus:border-primary-container focus:ring-0 focus:outline-none transition-colors shadow-sm placeholder:text-on-surface-variant/70" placeholder="Search posts, events, neighbors..." type="text"/>
+<button aria-label="Filter Options" class="absolute right-2 p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="tune">tune</span>
+</button>
+</div>
+<!-- Horizontal Category Filter Chips -->
+<nav aria-label="Categories" class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 -mx-margin px-margin">
+<!-- Active Chip -->
+<button class="shrink-0 px-4 py-1.5 rounded-full bg-primary-container text-on-primary text-label-md font-label-md shadow-sm active:scale-95 transition-transform">
+        All Updates
+      </button>
+<!-- Events Chip -->
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/50 text-on-surface hover:bg-surface-container text-label-md font-label-md active:scale-95 transition-all">
+        Events
+      </button>
+<!-- Alerts Chip with Amber Indicator -->
+<button class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/50 text-on-surface hover:bg-surface-container text-label-md font-label-md active:scale-95 transition-all">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+        Alerts
+      </button>
+<!-- Lost & Found -->
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/50 text-on-surface hover:bg-surface-container text-label-md font-label-md active:scale-95 transition-all">
+        Lost &amp; Found
+      </button>
+<!-- Recommendations -->
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/50 text-on-surface hover:bg-surface-container text-label-md font-label-md active:scale-95 transition-all">
+        Recommendations
+      </button>
+<!-- Free & For Sale -->
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/50 text-on-surface hover:bg-surface-container text-label-md font-label-md active:scale-95 transition-all">
+        Free &amp; For Sale
+      </button>
+</nav>
+<!-- Post Feed Stream -->
+<div class="space-y-space-md">
+<!-- Post 1: Urgent Safety Notice Card -->
+<article class="bg-surface-container-lowest rounded-2xl border border-outline-variant/40 shadow-sm p-space-md overflow-hidden relative transition-all hover:border-outline-variant">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary-container"></div>
+<!-- Post Header -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-xl" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-label-lg font-label-lg text-on-surface">Oakridge Neighborhood Council</span>
+<span class="material-symbols-outlined text-primary text-base fill-icon" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-on-surface-variant">
+<span>15m ago</span>
+<span>•</span>
+<span class="inline-flex items-center gap-0.5 text-error font-medium">
+<span class="material-symbols-outlined text-xs" data-icon="warning">warning</span>
+                  Safety Notice
+                </span>
+</div>
+</div>
+</div>
+<button aria-label="More options" class="text-on-surface-variant p-1 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined text-lg" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Post Content -->
+<div class="mt-3">
+<p class="text-body-md font-body-md text-on-surface">
+            Annual water main inspection on Maple Ave tomorrow from 9am-1pm. Water pressure may temporarily fluctuate. Tap below for the local detour map and alternate parking guidelines.
+          </p>
+<!-- Detour Preview Sub-card -->
+<div class="mt-3.5 p-3 rounded-xl bg-surface-container-low border border-outline-variant/40 flex items-center justify-between cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="p-2 rounded-lg bg-surface-container-lowest text-primary">
+<span class="material-symbols-outlined text-xl" data-icon="map">map</span>
+</div>
+<div>
+<span class="text-label-md font-label-md text-on-surface block">Maple Ave Detour &amp; Hydrant Plan</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">PDF • 1.2 MB</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-base" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Engagement Bar -->
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-4">
+<button class="inline-flex items-center gap-1.5 hover:text-primary transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined text-lg" data-icon="thumb_up">thumb_up</span>
+<span>24</span>
+</button>
+<button class="inline-flex items-center gap-1.5 hover:text-primary transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined text-lg" data-icon="chat_bubble">chat_bubble</span>
+<span>8</span>
+</button>
+</div>
+<button aria-label="Share" class="inline-flex items-center gap-1 hover:text-primary transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span>
+<span>Share</span>
+</button>
+</div>
+</article>
+<!-- Post 2: Community Event with Image Placeholder -->
+<article class="bg-surface-container-lowest rounded-2xl border border-outline-variant/40 shadow-sm p-space-md overflow-hidden transition-all hover:border-outline-variant">
+<!-- Post Header -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/50">
+<img class="w-full h-full object-cover" data-alt="A warm candid portrait of Elena Rostova wearing a gardening apron, smiling softly in a vibrant outdoor greenhouse filled with fresh herbs. High key organic lighting with natural soft focus background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA81Sqm5WaXmhliXaQbaFIsWtD0L2lFExSq0sS0Bh3SOMaG3dxZ5tllltmLox-qXL9SLdxEdQZa0leshZFNtKyxzIGkUakUchGuc4WQsURunh5biWj-ssR0cJmPd4yYJYe6hzAQ1ml5mwZo8J6AE0o2HjUs5A84EfdXplkFQSDulr2tNuK1MWWZkShO1Qm3uVil5WEzFiIie0UTRbLOW8YQufb2h0uydkqlV48WTI8"/>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-label-lg font-label-lg text-on-surface">Elena Rostova</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">• Community Garden</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-on-surface-variant">
+<span>2h ago</span>
+<span>•</span>
+<span class="inline-flex items-center gap-0.5 text-primary font-medium">
+<span class="material-symbols-outlined text-xs" data-icon="event">event</span>
+                  Sat, 10:00 AM
+                </span>
+</div>
+</div>
+</div>
+<button aria-label="More options" class="text-on-surface-variant p-1 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined text-lg" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Post Content -->
+<div class="mt-3">
+<p class="text-body-md font-body-md text-on-surface">
+            Harvest fest prep is underway! Bring your homegrown herbs &amp; join us this Saturday at 10 AM 🌻 We'll have fresh mint tea, plant starters, and potting tables set up by the gazebo!
+          </p>
+<!-- Event Image Placeholder -->
+<div class="mt-3 rounded-xl overflow-hidden aspect-[16/9] border border-outline-variant/40 relative">
+<img class="w-full h-full object-cover hover:scale-102 transition-transform duration-300" data-alt="A lush community garden courtyard in Oakridge Commons on a bright sunny morning. Wooden raised garden planter boxes are overflowing with vibrant green herbs, sunflowers, and heirloom tomatoes. Friendly neighbors gathered peacefully in the distance under a warm botanical sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaV8s0FUergMWlfJ1GL3T_lfhSSNYDvclZ9VFjg4jP1XIbYA2YCrAETkMQyFcfxls4M9YPytHZi-te1_gI8TVZJU2sO_bxuGqJsRjKVI4ZgOncClOhIgk8St1Pbzc2p9GR7_ROOSp2Tmkls_s4uxIEwu9j3CRcU-CqHfz7khOqNqZsaVqRjNNx-U5wwVQZEOxcMUaHAuT9nZ6S4Ib3RS8f9J4LvTTsmGgz1VzZqWM"/>
+<div class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-full bg-inverse-surface/80 backdrop-blur-md text-on-primary text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+              Gazebo Plots
+            </div>
+</div>
+</div>
+<!-- Engagement Bar with Active Heart -->
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-4">
+<button class="inline-flex items-center gap-1.5 text-error font-label-md text-label-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-lg fill-icon" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span>52</span>
+</button>
+<button class="inline-flex items-center gap-1.5 hover:text-primary transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined text-lg" data-icon="chat_bubble">chat_bubble</span>
+<span>19</span>
+</button>
+</div>
+<button aria-label="Share" class="inline-flex items-center gap-1 hover:text-primary transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span>
+<span>Share</span>
+</button>
+</div>
+</article>
+<!-- Post 3: Recommendation / Help Inquiry Card -->
+<article class="bg-surface-container-lowest rounded-2xl border border-outline-variant/40 shadow-sm p-space-md overflow-hidden transition-all hover:border-outline-variant">
+<!-- Post Header -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-label-lg">
+              DK
+            </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-label-lg font-label-lg text-on-surface">David Kim</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-surface-container-low text-label-sm font-label-sm text-on-surface-variant">4th St</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">4h ago</span>
+</div>
+</div>
+<button aria-label="More options" class="text-on-surface-variant p-1 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined text-lg" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Post Content -->
+<div class="mt-3">
+<p class="text-body-md font-body-md text-on-surface">
+            Anyone have a reliable local electrician recommendation? Moving into 4th St next week and need an EV charger installed plus a breaker inspection. Thanks in advance!
+          </p>
+<!-- Top Neighbor Recommendation Preview -->
+<div class="mt-3 p-3 rounded-xl bg-surface-container-low/70 border border-outline-variant/30 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5" data-icon="recommend">recommend</span>
+<div class="text-body-sm font-body-sm text-on-surface">
+<span class="font-semibold text-primary">Sarah C.</span> recommended <span class="font-medium text-on-surface">Oakridge Electric &amp; Solar</span>: "Installed our Level 2 charger last month, punctual and neat."
+            </div>
+</div>
+</div>
+<!-- Engagement Bar -->
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-4">
+<button class="inline-flex items-center gap-1.5 hover:text-primary transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined text-lg" data-icon="thumb_up">thumb_up</span>
+<span>7</span>
+</button>
+<button class="inline-flex items-center gap-1.5 text-primary font-semibold text-label-md font-label-md">
+<span class="material-symbols-outlined text-lg" data-icon="chat_bubble">chat_bubble</span>
+<span>12 neighbor replies</span>
+</button>
+</div>
+<button aria-label="Share" class="inline-flex items-center gap-1 hover:text-primary transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span>
+<span>Share</span>
+</button>
+</div>
+</article>
+</div>
+</main>
+<!-- Contextual Floating Action Button (Create Post) positioned above docked nav -->
+<aside class="fixed bottom-20 right-4 md:right-8 z-40">
+<button aria-label="Create Post" class="flex items-center gap-2 bg-primary-container text-on-primary hover:bg-primary shadow-lg hover:shadow-xl active:scale-95 transition-all duration-150 py-3.5 px-5 rounded-full font-label-lg text-label-lg group">
+<span class="material-symbols-outlined text-2xl group-hover:rotate-90 transition-transform duration-200" data-icon="add">add</span>
+<span class="font-semibold">Create Post</span>
+</button>
+</aside>
+<!-- Bottom Navigation Bar (Faithfully executing JSON BottomNavBar parameters) -->
+<nav aria-label="Bottom Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-sm py-space-xs bg-surface dark:bg-inverse-surface border-t border-outline-variant/40 shadow-[0px_-4px_16px_rgba(20,30,20,0.06)]">
+<!-- Item 1: Home (Active state matching JSON style_active_navigation) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary font-semibold py-1 px-3 bg-secondary-container/60 dark:bg-primary-container rounded-full active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-2xl fill-icon" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<!-- Item 2: Discover -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant py-1 px-3 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="explore">explore</span>
+<span class="text-label-sm font-label-sm">Discover</span>
+</a>
+<!-- Item 3: Create -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant py-1 px-3 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="add_circle">add_circle</span>
+<span class="text-label-sm font-label-sm">Create</span>
+</a>
+<!-- Item 4: Alerts (with unread notification badge) -->
+<a class="relative flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant py-1 px-3 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-3.5 w-4 h-4 rounded-full bg-error text-on-error text-[10px] font-bold flex items-center justify-center ring-2 ring-surface">3</span>
+<span class="text-label-sm font-label-sm">Alerts</span>
+</a>
+<!-- Item 5: Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant py-1 px-3 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

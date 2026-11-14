@@ -1,0 +1,68 @@
+import type { Comment } from '../types/community';
+
+export function createComments(): Comment[] {
+  return [
+    {
+      id: 'c1',
+      postId: 'my-garden',
+      authorName: 'Marcus Vance',
+      authorMeta: 'Oakridge Resident',
+      body: 'Sounds amazing! I can bring 4 extra potting trowels and some lavender clippings.',
+      timeLabel: '45m ago',
+      likes: 4,
+      liked: false,
+    },
+    {
+      id: 'c2',
+      postId: 'my-garden',
+      authorName: 'Sarah Jenkins',
+      authorMeta: 'Maple St South',
+      body: 'Will there be parking by the south gate?',
+      timeLabel: '1h ago',
+      likes: 2,
+      liked: false,
+    },
+    {
+      id: 'c3',
+      postId: 'my-garden',
+      parentId: 'c2',
+      authorName: 'Elena Rostova',
+      authorMeta: 'Garden Lead',
+      body: 'Yes, the south lot is open. Overflow parking is by the community school.',
+      timeLabel: '32m ago',
+      likes: 5,
+      liked: true,
+      isAuthor: false,
+    },
+    {
+      id: 'c4',
+      postId: 'water-main',
+      authorName: 'Priya Shah',
+      authorMeta: 'Maple Ave',
+      body: 'Thanks for the notice. We will fill jugs tonight.',
+      timeLabel: '12m ago',
+      likes: 3,
+      liked: false,
+    },
+    {
+      id: 'c5',
+      postId: 'harvest-fest',
+      authorName: 'Luis Ortega',
+      authorMeta: 'Gazebo Plots',
+      body: 'I can bring mint and a folding table.',
+      timeLabel: '40m ago',
+      likes: 6,
+      liked: false,
+    },
+    {
+      id: 'c6',
+      postId: 'electrician',
+      authorName: 'Sarah C.',
+      authorMeta: '4th St',
+      body: 'Oakridge Electric & Solar installed our Level 2 charger last month.',
+      timeLabel: '3h ago',
+      likes: 7,
+      liked: false,
+    },
+  ];
+}

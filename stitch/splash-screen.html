@@ -1,0 +1,254 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>LocalConnect</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#2e4f11",
+            "secondary-fixed-dim": "#c0c8c2",
+            "on-surface-variant": "#404944",
+            "surface-container-highest": "#dce5d9",
+            "on-secondary-container": "#5c645f",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#1a503d",
+            "surface-container-high": "#e2ebde",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#161d19",
+            "tertiary-fixed-dim": "#aad385",
+            "primary-fixed": "#b7eed5",
+            "secondary": "#58605b",
+            "primary-fixed-dim": "#9cd2ba",
+            "on-tertiary-fixed": "#0d2000",
+            "inverse-surface": "#2a322a",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#9cd2ba",
+            "surface-bright": "#f3fcef",
+            "on-primary-fixed": "#002116",
+            "error-container": "#ffdad6",
+            "secondary-container": "#dae2db",
+            "surface-tint": "#346854",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#e8f0e4",
+            "surface-variant": "#dce5d9",
+            "surface-container-low": "#edf6e9",
+            "error": "#ba1a1a",
+            "on-background": "#161d16",
+            "tertiary-container": "#2c4d0f",
+            "surface": "#f3fcef",
+            "on-tertiary-container": "#96be73",
+            "primary-container": "#174d3b",
+            "inverse-on-surface": "#eaf3e7",
+            "secondary-fixed": "#dce4de",
+            "on-secondary-fixed-variant": "#414944",
+            "on-primary-container": "#87bda6",
+            "tertiary": "#193500",
+            "on-error": "#ffffff",
+            "background": "#f3fcef",
+            "outline": "#707974",
+            "on-surface": "#161d16",
+            "surface-dim": "#d4ddd0",
+            "outline-variant": "#c0c9c2",
+            "tertiary-fixed": "#c5ef9f",
+            "primary": "#003526"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-sm": "0.75rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin-desktop": "2rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "margin-tablet": "1.5rem",
+            "space-md": "1rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @keyframes progressPulse {
+      0% {
+        transform: translateX(-100%);
+      }
+      50% {
+        transform: translateX(20%);
+      }
+      100% {
+        transform: translateX(110%);
+      }
+    }
+    
+    @keyframes subtleGlow {
+      0%, 100% {
+        opacity: 0.35;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.55;
+        transform: scale(1.06);
+      }
+    }
+
+    .animate-progress {
+      animation: progressPulse 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .animate-ambient-glow {
+      animation: subtleGlow 6s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="h-full bg-primary-container text-on-primary antialiased select-none overflow-hidden m-0 p-0 font-body-md text-body-md flex items-center justify-center">
+<!-- Mobile Canvas Device Shell (Simulating Android Edge-to-Edge) -->
+<main class="relative w-full h-full max-w-[430px] max-h-[932px] bg-primary-container flex flex-col justify-between overflow-hidden shadow-2xl">
+<!-- Ambient Background Lighting / Architectural Gradient Orbs -->
+<div class="pointer-events-none absolute inset-0 overflow-hidden z-0">
+<div class="absolute -top-[15%] left-1/2 -translate-x-1/2 w-[340px] h-[340px] rounded-full bg-on-primary-container/20 blur-[90px] animate-ambient-glow"></div>
+<div class="absolute top-[40%] -left-[20%] w-[260px] h-[260px] rounded-full bg-tertiary-fixed/10 blur-[80px]"></div>
+<div class="absolute bottom-[5%] right-[-10%] w-[280px] h-[280px] rounded-full bg-on-primary-container/15 blur-[85px]"></div>
+<!-- Micro-texture Radial Mesh Overlay -->
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,33,22,0.45)_100%)]"></div>
+</div>
+<!-- Android 14 Status Bar Top Safe-Area -->
+<header class="relative z-10 w-full px-margin pt-3 pb-2 flex justify-between items-center text-primary-fixed opacity-90">
+<!-- Status Clock -->
+<span class="font-label-md text-label-md tracking-tight font-semibold">9:41</span>
+<!-- System Icons Array -->
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[16px] leading-none text-primary-fixed">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[16px] leading-none text-primary-fixed">wifi</span>
+<span class="material-symbols-outlined text-[18px] leading-none text-primary-fixed">battery_full</span>
+</div>
+</header>
+<!-- Centerpiece Brand Identity Area -->
+<section class="relative z-10 flex-1 flex flex-col items-center justify-center px-margin -mt-6">
+<!-- Badge Framing Container -->
+<div class="relative group flex items-center justify-center mb- space-lg">
+<!-- Subtle Halo Ring (Level 2 Elevation Soft Light) -->
+<div class="absolute -inset-3 rounded-full bg-surface-container-lowest/10 blur-md transition-all duration-700"></div>
+<div class="absolute -inset-1 rounded-full border border-primary-fixed/20"></div>
+<!-- Center Badge Container (Crisp Sage / White Aesthetic) -->
+<div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-surface-container-lowest p-2 shadow-[0px_4px_12px_rgba(32,40,32,0.18)] flex items-center justify-center ring-4 ring-surface-container-highest/30">
+<div class="w-full h-full rounded-full overflow-hidden flex items-center justify-center bg-surface-container-low border border-outline-variant/40"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPtPh8lQGejU_gcSnbw2WLHfmd7_lc6tY4-NZNJYANxQUaG2S0fmolDlwXFbZP5dg3glsBR0_Y9MVSzl7b49lWGw1SpfFCA1J4N50sweBGIvJYPkQASemshq5XACABg6dg8Grx9lgZDCt7-owmp4yj7IH5QYpPNsuQCXo_xfD20reJlz4_S9O69rZ-qaRU2l5G2DBYqnDcJMZyX8zvBIjZvFuvcosA80Kre_UFYCICG_iaJ0ybqLp9" alt="LocalConnect Brand Logo" class="w-full h-full object-cover rounded-full transition-transform duration-500 hover:scale-105"></div>
+</div>
+<!-- High-Craft Accent Dot (Organic Green Accent) -->
+<div class="absolute bottom-1 right-2 w-5 h-5 rounded-full bg-tertiary-fixed-dim border-2 border-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[12px] text-on-tertiary-fixed font-bold">check</span>
+</div>
+</div>
+<!-- Typography Wordmark & Micro-Copy -->
+<div class="flex flex-col items-center text-center mt-3">
+<h1 class="font-display-lg-mobile text-display-lg-mobile font-bold tracking-tight text-on-primary">
+          LocalConnect
+        </h1>
+<!-- Tagline with civic tone & accent dot -->
+<div class="inline-flex items-center gap-2 mt-2 px-3 py-1 rounded-full bg-on-primary-fixed-variant/40 backdrop-blur-sm border border-outline-variant/20">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim inline-block animate-pulse"></span>
+<span class="font-body-md text-body-md text-surface-container font-medium">
+            Your neighborhood, connected.
+          </span>
+</div>
+</div>
+<!-- Linear-style Micro-features Subtle Pills -->
+<div class="mt-8 flex items-center gap-2 text-primary-fixed-dim opacity-75">
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm px-2.5 py-1 rounded-full bg-surface/5 border border-primary-fixed/10">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span>Verified Local</span>
+</div>
+<span class="text-outline-variant/50">•</span>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm px-2.5 py-1 rounded-full bg-surface/5 border border-primary-fixed/10">
+<span class="material-symbols-outlined text-[14px]">nature_people</span>
+<span>Oakridge Ward</span>
+</div>
+</div>
+</section>
+<!-- Bottom Footer Area: Loading state & Version Telemetry -->
+<footer class="relative z-10 w-full px-margin pb-6 pt-2 flex flex-col items-center gap-4">
+<!-- Modern Slim Progress Track -->
+<div class="w-44 h-1.5 bg-primary-fixed/15 rounded-full overflow-hidden relative">
+<div class="h-full bg-primary-fixed-dim rounded-full w-20 animate-progress"></div>
+</div>
+<!-- Version & Municipal Node Descriptor -->
+<div class="flex flex-col items-center text-center space-y-1">
+<p class="font-label-md text-label-md text-surface-container-high/80 tracking-wide font-medium">
+          v2.4 • Connecting Oakridge &amp; beyond
+        </p>
+<div class="flex items-center gap-1.5 text-on-primary-container text-label-sm font-label-sm opacity-70">
+<span class="material-symbols-outlined text-[12px]">sync</span>
+<span>Syncing neighborhood feeds</span>
+</div>
+</div>
+<!-- Android Home Indicator / Navigation Bar -->
+<div class="w-36 h-1 bg-surface-container-highest/40 rounded-full mt-2"></div>
+</footer>
+</main>
+<script>
+    // Micro-interaction: Subtle dynamic feedback when touching screen
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector('main');
+      if (container) {
+        container.addEventListener('pointerdown', (e) => {
+          const ripple = document.createElement('div');
+          ripple.className = 'absolute rounded-full pointer-events-none bg-surface/10 duration-700 animate-ping';
+          ripple.style.width = '100px';
+          ripple.style.height = '100px';
+          ripple.style.left = `${e.clientX - 50}px`;
+          ripple.style.top = `${e.clientY - 50}px`;
+          ripple.style.transform = 'translate(-50%, -50%)';
+          container.appendChild(ripple);
+          setTimeout(() => ripple.remove(), 700);
+        });
+      }
+    });
+  </script>
+
+
+</body></html>

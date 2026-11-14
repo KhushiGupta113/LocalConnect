@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Profile - LocalConnect</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#2e4f11",
+            "secondary-fixed-dim": "#c0c8c2",
+            "on-surface-variant": "#404944",
+            "surface-container-highest": "#dce5d9",
+            "on-secondary-container": "#5c645f",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#1a503d",
+            "surface-container-high": "#e2ebde",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#161d19",
+            "tertiary-fixed-dim": "#aad385",
+            "primary-fixed": "#b7eed5",
+            "secondary": "#58605b",
+            "primary-fixed-dim": "#9cd2ba",
+            "on-tertiary-fixed": "#0d2000",
+            "inverse-surface": "#2a322a",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#9cd2ba",
+            "surface-bright": "#f3fcef",
+            "on-primary-fixed": "#002116",
+            "error-container": "#ffdad6",
+            "secondary-container": "#dae2db",
+            "surface-tint": "#346854",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#e8f0e4",
+            "surface-variant": "#dce5d9",
+            "surface-container-low": "#edf6e9",
+            "error": "#ba1a1a",
+            "on-background": "#161d16",
+            "tertiary-container": "#2c4d0f",
+            "surface": "#f3fcef",
+            "on-tertiary-container": "#96be73",
+            "primary-container": "#174d3b",
+            "inverse-on-surface": "#eaf3e7",
+            "secondary-fixed": "#dce4de",
+            "on-secondary-fixed-variant": "#414944",
+            "on-primary-container": "#87bda6",
+            "tertiary": "#193500",
+            "on-error": "#ffffff",
+            "background": "#f3fcef",
+            "outline": "#707974",
+            "on-surface": "#161d16",
+            "surface-dim": "#d4ddd0",
+            "outline-variant": "#c0c9c2",
+            "tertiary-fixed": "#c5ef9f",
+            "primary": "#003526"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-sm": "0.75rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin-desktop": "2rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "margin-tablet": "1.5rem",
+            "space-md": "1rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Custom clean focus ring using brand primary green */
+    .custom-input:focus {
+      outline: none;
+      border-color: #174D3B;
+      box-shadow: 0 0 0 1px #174D3B;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex justify-center selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Android Device Canvas (Max Width Wrapper) -->
+<div class="w-full max-w-md bg-surface flex flex-col min-h-screen shadow-xl relative pb-10">
+<!-- Android Status Bar Emulation -->
+<div class="w-full h-7 px-margin flex items-center justify-between text-on-surface-variant pt-2 select-none">
+<span class="font-label-sm text-label-sm font-semibold">9:41</span>
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[15px]" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[15px] fill-icon" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+<!-- Top Bar Component (Transactional Screen with Cancel / Save) -->
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-md px-margin py-space-sm flex items-center justify-between border-b border-outline-variant/30">
+<div class="flex items-center space-x-2">
+<button aria-label="Cancel" class="p-1 -ml-1 text-on-surface hover:text-primary active:scale-95 transition-transform rounded-full" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Edit Profile</h1>
+</div>
+<button class="bg-primary-container hover:opacity-95 text-on-primary font-label-md text-label-md px- space-md py-1.5 rounded-full font-semibold transition active:scale-95 shadow-sm" type="button">
+        Save
+      </button>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex-1 px-margin py-space-md space-y-space-lg">
+<!-- Profile Picture Section -->
+<section class="flex flex-col items-center text-center pt- space-sm">
+<div class="relative group">
+<div class="w-28 h-28 rounded-full overflow-hidden p-1 border-2 border-primary-container/20 bg-surface-container-lowest shadow-sm">
+<img alt="Maya Lindqvist" class="w-full h-full object-cover rounded-full" data-alt="A portrait of Maya Lindqvist, a 34-year-old Scandinavian woman with warm gentle eyes, tied-back auburn hair, and an approachable smile in soft morning natural lighting. The background features lush garden foliage and warm wooden architectural accents with a serene, civic, community-first atmosphere in gentle forest greens and warm off-white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAATbHxdONLC6qrNFOGvXorR5mibMNGMXPlMCVvV11biVZiia6QWJjnhQYT5CS54hNYTbjhyE5jQhNVIRzy9dc0YhgWhdK-m8YvWKvpehKmUOPgG3U7I7R4iGjWEAHjattWo5B-IZcwa5qII4NTEnz33Wr_S3A43nWBMdrhQwIkCKVDVori90uXg3Zrs4v0nQtJL2IG5E6Iy1oq5HR_b04rZ5qW7jlkAocnYHpYtUw"/>
+</div>
+<!-- Camera Overlay Action Button -->
+<button aria-label="Change Photo" class="absolute bottom-1 right-1 w-9 h-9 bg-primary-container hover:bg-primary text-on-primary rounded-full flex items-center justify-center shadow-md active:scale-90 transition-transform border-2 border-surface" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="photo_camera">photo_camera</span>
+</button>
+</div>
+<button class="mt-space-sm font-label-md text-label-md text-primary font-semibold hover:underline" type="button">
+          Update Photo
+        </button>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mt-1">
+          Square image, at least 400x400px. Visible to verified neighbors.
+        </p>
+</section>
+<!-- Form Input Fields Section -->
+<form class="space-y-space-md" onsubmit="event.preventDefault();">
+<!-- 1. Full Name -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface font-semibold" for="full-name">
+            Full Name
+          </label>
+<div class="relative">
+<input class="custom-input w-full h-12 px-space-md bg-surface-container-lowest border border-outline-variant/60 rounded-xl font-body-md text-body-md text-on-surface transition-colors" id="full-name" type="text" value="Maya Lindqvist"/>
+<span class="absolute right-3.5 top-3.5 text-on-surface-variant/60">
+<span class="material-symbols-outlined text-[20px]" data-icon="badge">badge</span>
+</span>
+</div>
+</div>
+<!-- 2. Username / Handle -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface font-semibold" for="username">
+            Username / Handle
+          </label>
+<div class="flex items-center bg-surface-container-lowest border border-outline-variant/60 rounded-xl focus-within:border-primary-container focus-within:ring-1 focus-within:ring-primary-container transition-all">
+<span class="pl-space-md font-body-md text-body-md text-on-surface-variant/70 select-none">@</span>
+<input class="w-full h-12 pl-1 pr-space-md bg-transparent border-0 focus:ring-0 font-body-md text-body-md text-on-surface outline-none" id="username" type="text" value="mayalind"/>
+<span class="pr-3.5 text-tertiary-container flex items-center" title="Handle available">
+<span class="material-symbols-outlined text-[18px] fill-icon" data-icon="check_circle">check_circle</span>
+</span>
+</div>
+</div>
+<!-- 3. Neighborhood Role / Title -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="role-title">
+              Neighborhood Role / Title
+            </label>
+<span class="font-label-sm text-label-sm text-primary-container font-medium bg-primary-fixed/40 px-2 py-0.5 rounded-full">
+              Civic Member
+            </span>
+</div>
+<div class="relative">
+<input class="custom-input w-full h-12 px-space-md bg-surface-container-lowest border border-outline-variant/60 rounded-xl font-body-md text-body-md text-on-surface transition-colors" id="role-title" type="text" value="Block Representative"/>
+<span class="absolute right-3.5 top-3.5 text-on-surface-variant/60">
+<span class="material-symbols-outlined text-[20px]" data-icon="shield_person">shield_person</span>
+</span>
+</div>
+</div>
+<!-- 4. Bio -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="bio-textarea">
+              Bio
+            </label>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="char-count">148/200</span>
+</div>
+<textarea class="custom-input w-full p-space-md bg-surface-container-lowest border border-outline-variant/60 rounded-xl font-body-md text-body-md text-on-surface transition-colors resize-none leading-relaxed" id="bio-textarea" maxlength="200" rows="3">Urban gardener, sustainability advocate &amp; Oakridge Commons resident for 6 years. Always happy to lend garden tools and organize block cleanups! 🌱</textarea>
+</div>
+<!-- 5. Neighborhood Area (Verified) -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="neighborhood-area">
+              Neighborhood Area
+            </label>
+<!-- Verified Residence Tag -->
+<span class="inline-flex items-center gap-1 bg-surface-container-high text-primary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#8CB369]"></span>
+              Verified Residence
+            </span>
+</div>
+<div class="relative">
+<input class="w-full h-12 pl-space-md pr-10 bg-surface-container-low border border-outline-variant/40 rounded-xl font-body-md text-body-md text-on-surface cursor-not-allowed select-none" id="neighborhood-area" readonly="" type="text" value="Oakridge Commons, Portland"/>
+<span class="absolute right-3.5 top-3.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[11px] px-1">
+            Bound to your verified utility statement. Request change through Community Council.
+          </p>
+</div>
+<!-- 6. Street / Cross Street (Optional) + Privacy Check -->
+<div class="space-y-2 pt-1">
+<label class="block font-label-md text-label-md text-on-surface font-semibold" for="street-address">
+            Street / Cross Street <span class="font-normal text-on-surface-variant">(Optional)</span>
+</label>
+<div class="relative">
+<input class="custom-input w-full h-12 px-space-md bg-surface-container-lowest border border-outline-variant/60 rounded-xl font-body-md text-body-md text-on-surface transition-colors" id="street-address" type="text" value="12th &amp; Elmwood St"/>
+<span class="absolute right-3.5 top-3.5 text-on-surface-variant/60">
+<span class="material-symbols-outlined text-[20px]" data-icon="signpost">signpost</span>
+</span>
+</div>
+<!-- Direct Block Privacy Toggle sub-card -->
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+<div class="flex items-center space-x-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="visibility_off">visibility_off</span>
+<span class="font-body-sm text-body-sm text-on-surface">Show only to direct block neighbors</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-6 bg-secondary-container peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+<!-- Privacy & Preferences Section -->
+<div class="pt-space-sm space-y-space-sm">
+<h2 class="font-label-lg text-label-lg text-on-surface font-semibold tracking-tight px-0.5">
+            Privacy &amp; Preferences
+          </h2>
+<div class="bg-surface-container-lowest border border-outline-variant/60 rounded-xl divide-y divide-outline-variant/30">
+<!-- Toggle 1: Contact Info -->
+<div class="flex items-center justify-between p-3.5">
+<div class="space-y-0.5 pr-4">
+<span class="block font-label-md text-label-md text-on-surface font-semibold">
+                  Show contact info in neighborhood directory
+                </span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant text-[12px]">
+                  Allows verified neighbors to email or call directly for community inquiries.
+                </span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-6 bg-secondary-container peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Toggle 2: Urgent Push Alerts -->
+<div class="flex items-center justify-between p-3.5">
+<div class="space-y-0.5 pr-4">
+<span class="block font-label-md text-label-md text-on-surface font-semibold">
+                  Receive urgent neighborhood push alerts
+                </span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant text-[12px]">
+                  Critical notices for block emergencies, storms, and immediate safety notices.
+                </span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-6 bg-secondary-container peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Danger / Secondary Settings Link -->
+<div class="pt-2 flex justify-center">
+<button class="text-on-surface-variant font-label-sm text-label-sm hover:text-error transition-colors flex items-center space-x-1.5 py-1" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="delete">delete</span>
+<span>Deactivate or transfer residence profile</span>
+</button>
+</div>
+</form>
+</main>
+<!-- Bottom Action CTA Sticky Bar -->
+<div class="sticky bottom-0 bg-surface/95 backdrop-blur-md px-margin py-3 border-t border-outline-variant/30 mt-auto">
+<button class="w-full h-12 bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg font-semibold rounded-full flex items-center justify-center space-x-2 shadow-md active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+<span>Save Changes</span>
+</button>
+</div>
+</div>
+</body></html>

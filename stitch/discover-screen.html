@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LocalConnect - Discover</title>
+<!-- Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms & Container Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#2e4f11",
+            "secondary-fixed-dim": "#c0c8c2",
+            "on-surface-variant": "#404944",
+            "surface-container-highest": "#dce5d9",
+            "on-secondary-container": "#5c645f",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#1a503d",
+            "surface-container-high": "#e2ebde",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#161d19",
+            "tertiary-fixed-dim": "#aad385",
+            "primary-fixed": "#b7eed5",
+            "secondary": "#58605b",
+            "primary-fixed-dim": "#9cd2ba",
+            "on-tertiary-fixed": "#0d2000",
+            "inverse-surface": "#2a322a",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#9cd2ba",
+            "surface-bright": "#f3fcef",
+            "on-primary-fixed": "#002116",
+            "error-container": "#ffdad6",
+            "secondary-container": "#dae2db",
+            "surface-tint": "#346854",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#e8f0e4",
+            "surface-variant": "#dce5d9",
+            "surface-container-low": "#edf6e9",
+            "error": "#ba1a1a",
+            "on-background": "#161d16",
+            "tertiary-container": "#2c4d0f",
+            "surface": "#f3fcef",
+            "on-tertiary-container": "#96be73",
+            "primary-container": "#174d3b",
+            "inverse-on-surface": "#eaf3e7",
+            "secondary-fixed": "#dce4de",
+            "on-secondary-fixed-variant": "#414944",
+            "on-primary-container": "#87bda6",
+            "tertiary": "#193500",
+            "on-error": "#ffffff",
+            "background": "#f3fcef",
+            "outline": "#707974",
+            "on-surface": "#161d16",
+            "surface-dim": "#d4ddd0",
+            "outline-variant": "#c0c9c2",
+            "tertiary-fixed": "#c5ef9f",
+            "primary": "#003526"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-sm": "0.75rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "margin": "1rem",
+            "margin-tablet": "1.5rem",
+            "margin-desktop": "2rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-24 selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Viewport Wrapper (Android Shell constraint) -->
+<div class="max-w-md mx-auto min-h-screen bg-surface flex flex-col relative shadow-[0px_4px_24px_rgba(0,0,0,0.06)]">
+<!-- Top Status Bar & TopAppBar Anchor from Shared Components -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md shadow-sm">
+<!-- Android System Status Bar Simulation -->
+<div class="w-full flex items-center justify-between px-6 pt-3 pb-1 text-on-surface-variant font-label-sm">
+<span>9:41</span>
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[15px]" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+<!-- TopAppBar Shared Component Anchor -->
+<div class="flex justify-between items-center w-full px-margin h-14 bg-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="text-headline-sm font-headline-sm text-primary font-bold tracking-tight">Oakridge Commons</span>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+<!-- Integrated Search Input & Proximity Filter -->
+<div class="px-margin pb-3 pt-1 flex flex-col gap-2.5">
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant/70 text-[20px]" data-icon="search">search</span>
+<input class="w-full pl-11 pr-4 py-2.5 bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/60 rounded-xl border border-outline-variant/50 focus:outline-none focus:border-primary text-body-md transition-colors" placeholder="Search Oakridge Commons &amp; nearby..." type="text"/>
+</div>
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-full text-primary border border-outline-variant/40 active:scale-95 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="near_me">near_me</span>
+<span class="font-label-md text-label-md">Within 2 miles</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">420+ active neighbors</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col gap-6 pt-2">
+<!-- Trending Topics Section -->
+<section class="flex flex-col gap-2.5">
+<div class="px-margin flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="trending_up">trending_up</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Trending Topics</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Updated hourly</span>
+</div>
+<!-- Horizontal Scrolling Chips -->
+<div class="flex gap-2 overflow-x-auto no-scrollbar px-margin py-0.5">
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm active:scale-95 transition-transform">
+            #FallFestival
+          </button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/60 text-on-surface font-label-md text-label-md hover:bg-surface-container active:scale-95 transition-transform flex items-center gap-1">
+<span>#MapleStDetour</span>
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+</button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/60 text-on-surface font-label-md text-label-md hover:bg-surface-container active:scale-95 transition-transform">
+            #ToolLibrary
+          </button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/60 text-on-surface font-label-md text-label-md hover:bg-surface-container active:scale-95 transition-transform">
+            #DogWalkersClub
+          </button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/60 text-on-surface font-label-md text-label-md hover:bg-surface-container active:scale-95 transition-transform">
+            #CommunitySafety
+          </button>
+</div>
+</section>
+<!-- Nearby Activities & Events Section -->
+<section class="flex flex-col gap-3 px-margin">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="event">event</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Nearby Activities &amp; Events</h2>
+</div>
+<a class="font-label-md text-label-md text-primary font-semibold hover:underline" href="#">See all</a>
+</div>
+<div class="flex flex-col gap-3.5">
+<!-- Event 1: Garden Restoration (Featured Card) -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/60 p-space-md shadow-[0px_2px_4px_rgba(23,77,59,0.03),0px_4px_12px_rgba(32,40,32,0.04)] flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]" data-icon="yard" style="font-variation-settings: 'FILL' 1;">yard</span>
+</div>
+<div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold bg-surface-container px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+                    Community Service
+                  </span>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Sat 9:00 AM • Maple Park</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="bookmark_border">bookmark_border</span>
+</button>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Weekend Volunteer Garden Restoration</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                Join neighbors to clear fallen autumn brush, refresh the organic compost beds, and plant cold-hardy native bulbs.
+              </p>
+</div>
+<!-- Image preview -->
+<div class="w-full h-32 rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A lush public botanical community garden in early morning daylight with diverse neighborhood volunteers working together among wooden raised garden beds, surrounded by rich emerald green leaves, autumn foliage, and rustic soil in an inviting, peaceful civic park setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHr0a-aOEMh0QD6Ps9X84RAKWE5bRf3En8jgyMqemlLq2lIDKFwfiCthz0iruPffrcTmZGBCS8f_GfykWQT283AP6zaVNWUCKTpn0IJEcyn7leSO_l6_D4TIHPqNP5cMTS53LG3ZL1x9b9aW5hwK0NT0cLFiqDsDI-vUlqt2oKW8rps6OunYqTgd6JhzNuNU6DL6KptNQA9bO7nuC1xMIWh7UPKmpxQ84ZelE-FRQ"/>
+<div class="absolute bottom-2 left-2 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-md text-[11px] font-label-sm text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary" data-icon="nature_people">nature_people</span>
+                Tools &amp; gloves provided
+              </div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/30">
+<div class="flex items-center gap-2">
+<div class="flex -space-x-1.5 overflow-hidden">
+<div class="inline-block h-6 w-6 rounded-full ring-2 ring-surface-container-lowest bg-primary-fixed-dim text-[10px] font-bold text-center leading-6 text-on-primary-fixed">SC</div>
+<div class="inline-block h-6 w-6 rounded-full ring-2 ring-surface-container-lowest bg-secondary-fixed text-[10px] font-bold text-center leading-6 text-on-secondary-fixed">TL</div>
+<div class="inline-block h-6 w-6 rounded-full ring-2 ring-surface-container-lowest bg-tertiary-fixed text-[10px] font-bold text-center leading-6 text-on-tertiary-fixed">MJ</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">42 neighbors going</span>
+</div>
+<button class="px-5 py-2 rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:opacity-95 active:scale-95 transition-all">
+                RSVP
+              </button>
+</div>
+</div>
+<!-- Event 2: Book Swap & Coffee -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/60 p-space-md shadow-[0px_2px_4px_rgba(23,77,59,0.03),0px_4px_12px_rgba(32,40,32,0.04)] flex items-center justify-between gap-3">
+<div class="flex items-start gap-3 flex-1">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]" data-icon="local_cafe">local_cafe</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sun 10:30 AM • Bean &amp; Leaf Cafe</span>
+<h4 class="font-headline-sm text-[16px] leading-tight text-on-surface font-semibold mt-0.5">Oakridge Monthly Book Swap &amp; Coffee</h4>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="material-symbols-outlined text-[15px] text-tertiary" data-icon="groups">groups</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">18 attending</span>
+</div>
+</div>
+</div>
+<button class="px-4 py-1.5 rounded-full bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high active:scale-95 transition-transform shrink-0">
+              Details
+            </button>
+</div>
+<!-- Event 3: Neighborhood Watch Safety Briefing -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/60 p-space-md shadow-[0px_2px_4px_rgba(23,77,59,0.03),0px_4px_12px_rgba(32,40,32,0.04)] flex items-center justify-between gap-3">
+<div class="flex items-start gap-3 flex-1">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]" data-icon="shield">shield</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tuesday 7:00 PM • Community Center</span>
+<h4 class="font-headline-sm text-[16px] leading-tight text-on-surface font-semibold mt-0.5">Neighborhood Watch Safety Briefing</h4>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Ward 4 Council Present</span>
+</div>
+</div>
+</div>
+<button class="px-4 py-1.5 rounded-full bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high active:scale-95 transition-transform shrink-0">
+              Details
+            </button>
+</div>
+</div>
+</section>
+<!-- Browse by Categories (2x2 Grid) -->
+<section class="flex flex-col gap-3 px-margin">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="category">category</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Browse by Categories</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hubs</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Card 1: Civic & Safety -->
+<div class="p-4 rounded-2xl bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between h-32 active:scale-95 transition-transform cursor-pointer hover:bg-surface-container">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[15px] font-semibold text-primary leading-tight">Civic &amp; Safety</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">14 active notices</p>
+</div>
+</div>
+<!-- Card 2: Marketplace & Free -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest border border-outline-variant/60 flex flex-col justify-between h-32 active:scale-95 transition-transform cursor-pointer hover:bg-surface-container-low">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="sell">sell</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[15px] font-semibold text-on-surface leading-tight">Marketplace &amp; Free</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">86 items listed</p>
+</div>
+</div>
+<!-- Card 3: Skills & Handyman -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest border border-outline-variant/60 flex flex-col justify-between h-32 active:scale-95 transition-transform cursor-pointer hover:bg-surface-container-low">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="build">build</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[15px] font-semibold text-on-surface leading-tight">Skills &amp; Handyman</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">31 verified helpers</p>
+</div>
+</div>
+<!-- Card 4: Pet Care & Wildlife -->
+<div class="p-4 rounded-2xl bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between h-32 active:scale-95 transition-transform cursor-pointer hover:bg-surface-container">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="pets" style="font-variation-settings: 'FILL' 1;">pets</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[15px] font-semibold text-primary leading-tight">Pet Care &amp; Wildlife</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">5 lost &amp; found</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Local Groups to Join Carousel -->
+<section class="flex flex-col gap-3 pb-6">
+<div class="px-margin flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="group_add">group_add</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Local Groups to Join</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Suggested</span>
+</div>
+<div class="flex gap-3 overflow-x-auto no-scrollbar px-margin">
+<!-- Group 1: Green Thumbs -->
+<div class="w-64 shrink-0 bg-surface-container-lowest rounded-2xl border border-outline-variant/60 p-4 shadow-[0px_2px_4px_rgba(23,77,59,0.03)] flex flex-col justify-between">
+<div class="flex items-start gap-3">
+<div class="w-12 h-12 rounded-xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A macro photography detail of healthy heirloom tomato vines, basil, and soil nurtured in an urban neighborhood raised garden under gentle ambient afternoon sunlight with a soft botanical green palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_QfINO1s2PHxJxEVn46iDjUNDqVmV2y0qBAYPRWlibPGJoQC4caeQPdHhFcKn18v4z26jp7rK6f0nRp_BBeUzVw0CZsuC0riNuN-h4tjFnO9zpYliSm--ToJH78X3OMUlj2_BthWU7y4xt_AGOjD053D9K_6WE9h_MC9oSfpXeYGjov1MDNb8hAeAzkJZ0orqI97qtzJLCWbKokJ3Qlaj0awpnD7yuuTj-AZk1zU"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-[15px] font-semibold text-on-surface truncate">Oakridge Green Thumbs</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">340 members</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-3 line-clamp-2">
+              Seed sharing, composting advice, and plant cuttings exchanges in Oakridge.
+            </p>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="forum">forum</span>
+                Very active
+              </span>
+<button class="px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md active:scale-95 transition-transform">
+                Join
+              </button>
+</div>
+</div>
+<!-- Group 2: Parents Group -->
+<div class="w-64 shrink-0 bg-surface-container-lowest rounded-2xl border border-outline-variant/60 p-4 shadow-[0px_2px_4px_rgba(23,77,59,0.03)] flex flex-col justify-between">
+<div class="flex items-start gap-3">
+<div class="w-12 h-12 rounded-xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A sunny and warm outdoor neighborhood park with wooden playground structures, strollers, and parents chatting pleasantly on wooden benches in an idyllic residential setting with natural greenery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy-MmjMgnyz4-NWXQZXVDxa476gPoFYI1SAbytpHrgWvuFocvqBg3GFHnijcRcWCh8V2IFIJkc4E2IZzX16WtegaoLScgmxsyQ3W_NRavum-oQvHdstpK4V9WCs7vCQwAzTU6gkIUXeoMLyq1CpBvENRQ1N8XbnH2ck1FqwqVrJzg-y5giWc-lKsob9DwEfRdk02j53HuCmBcas8zCnBkJRjQ7dnnKsVQbQgBhcvE"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-[15px] font-semibold text-on-surface truncate">4th Ward Parents Group</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">185 members</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-3 line-clamp-2">
+              Playdate meetups, school carpools, babysitting swaps, and family events.
+            </p>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="forum">forum</span>
+                Daily posts
+              </span>
+<button class="px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md active:scale-95 transition-transform">
+                Join
+              </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar from Shared Components JSON -->
+<!-- Screen intent is 'Discover', so 'Discover' destination is active -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-sm py-space-xs bg-surface dark:bg-inverse-surface border-t border-outline-variant/40 shadow-[0px_-4px_16px_rgba(20,30,20,0.06)]">
+<!-- Destination 1: Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant py-1 px-3 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">Home</span>
+</a>
+<!-- Destination 2: Discover (ACTIVE STATE MATCHING PAGE INTENT) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary font-semibold py-1 px-3 bg-secondary-container/60 dark:bg-primary-container rounded-full active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="text-label-sm font-label-sm mt-0.5">Discover</span>
+</a>
+<!-- Destination 3: Create (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant py-1 px-3 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px] text-primary" data-icon="add_circle" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="text-label-sm font-label-sm mt-0.5">Create</span>
+</a>
+<!-- Destination 4: Alerts (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant py-1 px-3 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+<span class="text-label-sm font-label-sm mt-0.5">Alerts</span>
+</a>
+<!-- Destination 5: Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant py-1 px-3 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm mt-0.5">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>

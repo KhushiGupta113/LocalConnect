@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "LocalConnect",
+    "slug": "localconnect",
+    "scheme": "localconnect",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#174D3B",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.localconnect.app"
+    },
+    "android": {
+      "package": "com.localconnect.app",
+      "softwareKeyboardLayoutMode": "resize",
+      "adaptiveIcon": {
+        "backgroundColor": "#174D3B",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "01aaae61-997a-4dda-ba51-f2723f6028af"
+      }
+    }
+  }
+}
